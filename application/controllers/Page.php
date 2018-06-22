@@ -6,14 +6,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class Page extends CI_Controller
 {
-	
 	function __construct()
 	{
 		parent::__construct();
 		// Validasi jika user belum login
 		if ($this->session->userdata('masuk') != TRUE) {
-			$url = base_url();
-			redirect($url);
+			redirect('login');
 		}
 	}
 
@@ -22,8 +20,9 @@ class Page extends CI_Controller
 
 		// Load halaman index | cek admin atau user
 		if ($this->session->userdata('akses') ==  '1') {
-			// $this->load->view('admin/v_header', $data);
-			$this->load->view('admin/v_dashboard', $data);
+			$this->load->view('admin/v_menu', $data);
+			$this->load->view('admin/v_dashboard');
+			$this->load->view('admin/v_footer');
 		}
 		else {
 			$this->load->view('user/v_header', $data);

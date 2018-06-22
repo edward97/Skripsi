@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 20, 2018 at 09:19 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.1.16
+-- Generation Time: Jun 22, 2018 at 11:48 AM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 7.1.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -33,7 +33,7 @@ CREATE TABLE `admins` (
   `nm_admin` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `created_at` datetime NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -42,7 +42,8 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id_admin`, `nm_admin`, `email`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'Edward', 'edw.suryajaya@gmail.com', '5f0713b7c76ee9285a14984eeb332f43', '2018-06-17 18:00:00', '2018-06-17 11:20:51');
+(1, 'Edward', 'edw.suryajaya@gmail.com', '5f0713b7c76ee9285a14984eeb332f43', '2018-06-17 18:00:00', '2018-06-17 11:20:51'),
+(5, 'admin', 'admin@mail.com', '21232f297a57a5a743894a0e4a801fc3', '2018-06-22 16:31:42', '2018-06-22 09:48:06');
 
 -- --------------------------------------------------------
 
@@ -57,15 +58,16 @@ CREATE TABLE `users` (
   `acc_status` tinyint(4) NOT NULL DEFAULT '0',
   `confirm_code` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `id_job` int(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id_user`, `email`, `password`, `acc_status`, `confirm_code`, `created_at`, `updated_at`) VALUES
-(1, 'johndoe@mail.com', '6579e96f76baa00787a28653876c6127', 0, NULL, '2018-06-17 18:00:00', '2018-06-17 13:11:38');
+INSERT INTO `users` (`id_user`, `email`, `password`, `acc_status`, `confirm_code`, `created_at`, `updated_at`, `id_job`) VALUES
+(1, 'johndoe@mail.com', '6579e96f76baa00787a28653876c6127', 0, NULL, '2018-06-17 18:00:00', '2018-06-22 02:00:23', NULL);
 
 --
 -- Indexes for dumped tables
@@ -91,7 +93,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id_admin` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_admin` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
