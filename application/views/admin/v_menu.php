@@ -17,6 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css') ?>">
 		<!--===============================================================================================-->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/admin_page.css') ?>">
+		<!--===============================================================================================-->
 	</head>
 	<body>
 		<div class="wrapper">
@@ -68,6 +69,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 					<div class="nav navbar-nav ml-auto">
 						<!-- <a class="navbar-brand" href="#"> Navbar</a> -->
-						<span>00/00/0000 | 00:00:00</span>
+						<!-- <span id="hour"></span>&nbsp;<span id="min">&nbsp;</span>&nbsp;<span id="sec"></span> -->
+						<span><?php echo $format; ?></span>
 					</div>
 				</nav>

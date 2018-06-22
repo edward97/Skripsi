@@ -18,6 +18,8 @@ class Admin extends CI_Controller
 
 	function index() {
 		if ($this->session->userdata('akses') ==  '1') {
+			$data['format'] = mdate('%d-%M-%Y %H:%i %a', now('Asia/Jakarta'));
+
 			$data['admin'] =  $this->admin_model->tampil_admin()->result();
 			$data['judul'] = "Admin";
 
@@ -32,6 +34,7 @@ class Admin extends CI_Controller
 
 	function add() {
 		if ($this->session->userdata('akses') ==  '1') {
+			$data['format'] = mdate('%d-%M-%Y %H:%i %a', now('Asia/Jakarta'));
 			$data['judul'] = "Tambah Admin";
 
 			$this->load->view('admin/v_menu', $data);
@@ -60,13 +63,20 @@ class Admin extends CI_Controller
 	}
 
 	function edit($id) {
-		$where = array('id_admin' => $id);
-		$data['admin'] = $this->admin_model->edit_admin('admins', $where)->result();
-		$data['judul'] = "Edit Admin";
+		if ($this->session->userdata('akses') ==  '1') {
+			$data['format'] = mdate('%d-%M-%Y %H:%i %a', now('Asia/Jakarta'));
 
-		$this->load->view('admin/v_menu', $data);
-		$this->load->view('admin/v_edit_user');
-		$this->load->view('admin/v_footer');
+			$where = array('id_admin' => $id);
+			$data['admin'] = $this->admin_model->edit_admin('admins', $where)->result();
+			$data['judul'] = "Edit Admin";
+
+			$this->load->view('admin/v_menu', $data);
+			$this->load->view('admin/v_edit_user');
+			$this->load->view('admin/v_footer');
+		}
+		else {
+			$this->load->view('index.html');
+		}
 	}
 
 	function update_act() {

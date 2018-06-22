@@ -1,4 +1,4 @@
-<p><?php echo anchor('admin/add', 'Tambah Admin', 'class="btn btn-outline-info"'); ?></p>
+<p><?php echo anchor('admin/add', 'Tambah Admin', 'class="btn btn-outline-success"'); ?></p>
 
 <table class="table table-hover">
 	<caption>List of users</caption>

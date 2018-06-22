@@ -6,6 +6,8 @@
 		<!--===============================================================================================-->
 		<script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/popper.js"></script>
 		<script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+		<!--===============================================================================================-->
+		<script src="<?php echo base_url(); ?>assets/js/time.js"></script>
 
 		<script type="text/javascript">
 			$(document).ready(function () {

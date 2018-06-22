@@ -16,6 +16,7 @@ class Page extends CI_Controller
 	}
 
 	function index() {
+		$data['format'] = mdate('%d-%M-%Y %H:%i %a', now('Asia/Jakarta'));
 		$data['judul'] = "Dashboard";
 
 		// Load halaman index | cek admin atau user
