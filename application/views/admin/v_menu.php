@@ -70,6 +70,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="nav navbar-nav ml-auto">
 						<!-- <a class="navbar-brand" href="#"> Navbar</a> -->
 						<!-- <span id="hour"></span>&nbsp;<span id="min">&nbsp;</span>&nbsp;<span id="sec"></span> -->
-						<span><?php echo $format; ?></span>
+						<span><small class="text-muted">Welcome! <?php echo $this->session->userdata('ses_nm')." | ".$format; ?></small></span>
 					</div>
 				</nav>

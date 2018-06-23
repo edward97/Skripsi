@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2018 at 11:48 AM
+-- Generation Time: Jun 23, 2018 at 09:03 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.1.17
 
@@ -43,7 +43,8 @@ CREATE TABLE `admins` (
 
 INSERT INTO `admins` (`id_admin`, `nm_admin`, `email`, `password`, `created_at`, `updated_at`) VALUES
 (1, 'Edward', 'edw.suryajaya@gmail.com', '5f0713b7c76ee9285a14984eeb332f43', '2018-06-17 18:00:00', '2018-06-17 11:20:51'),
-(5, 'admin', 'admin@mail.com', '21232f297a57a5a743894a0e4a801fc3', '2018-06-22 16:31:42', '2018-06-22 09:48:06');
+(5, 'admin', 'admin@mail.com', '21232f297a57a5a743894a0e4a801fc3', '2018-06-22 16:31:42', '2018-06-22 09:48:06'),
+(6, 'ccdnkz', 'ccdnkz@mail.com', '856e22b06868660656e0e6fff975a8d9', '2018-06-23 13:14:04', '2018-06-23 06:14:51');
 
 -- --------------------------------------------------------
 
@@ -57,7 +58,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `acc_status` tinyint(4) NOT NULL DEFAULT '0',
   `confirm_code` varchar(255) DEFAULT NULL,
-  `created_at` datetime NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `id_job` int(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -93,7 +94,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id_admin` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_admin` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`

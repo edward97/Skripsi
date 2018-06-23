@@ -24,7 +24,7 @@ class Admin extends CI_Controller
 			$data['judul'] = "Admin";
 
 			$this->load->view('admin/v_menu', $data);
-			$this->load->view('admin/v_user');
+			$this->load->view('admin/v_admin');
 			$this->load->view('admin/v_footer');
 		}
 		else {
@@ -38,7 +38,7 @@ class Admin extends CI_Controller
 			$data['judul'] = "Tambah Admin";
 
 			$this->load->view('admin/v_menu', $data);
-			$this->load->view('admin/v_add_user');
+			$this->load->view('admin/v_add_admin');
 			$this->load->view('admin/v_footer');
 		}
 		else {
@@ -71,7 +71,7 @@ class Admin extends CI_Controller
 			$data['judul'] = "Edit Admin";
 
 			$this->load->view('admin/v_menu', $data);
-			$this->load->view('admin/v_edit_user');
+			$this->load->view('admin/v_edit_admin');
 			$this->load->view('admin/v_footer');
 		}
 		else {
