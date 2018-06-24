@@ -43,10 +43,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</li> -->
 
 					<li><a href="#"><i class="fa fa-tachometer" aria-hidden="true"></i> Open Session</a></li>
-					<li><a href="<?php echo site_url('admin') ?>"><i class="fa fa-user-plus" aria-hidden="true"></i> Tambah Admin</a></li>
-					<li><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Profile User</a></li>
-					<li><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i> Input Kualifikasi</a></li>
-					<li><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i> Input Ujian</a></li>
+					<li><a href="<?php echo site_url('admin') ?>"><i class="fa fa-user-plus" aria-hidden="true"></i> Admin</a></li>
+					<li><a href="<?php echo site_url('user') ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Profile User</a></li>
 					<li><a href="#"><i class="fa fa-reply-all" aria-hidden="true"></i> Input Nilai Interview</a></li>
 					<li><a href="#"><i class="fa fa-clipboard" aria-hidden="true"></i> Soal Ujian</a></li>
 					<li><a href="#"><i class="fa fa-files-o" aria-hidden="true"></i> Kualifikasi</a></li>
