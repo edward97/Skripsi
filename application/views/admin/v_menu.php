@@ -48,6 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<li><a href="#"><i class="fa fa-reply-all" aria-hidden="true"></i> Input Nilai Interview</a></li>
 					<li><a href="#"><i class="fa fa-clipboard" aria-hidden="true"></i> Soal Ujian</a></li>
 					<li><a href="#"><i class="fa fa-files-o" aria-hidden="true"></i> Kualifikasi</a></li>
+					<li><a href="<?php echo site_url('setting') ?>"><i class="fa fa-handshake-o" aria-hidden="true"></i> Abilites & Jobs</a></li>
 					<li><a href="#"><i class="fa fa-file-o" aria-hidden="true"></i> Laporan Session</a></li>
 				</ul>
 

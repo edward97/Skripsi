@@ -220,7 +220,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		</section>
 
-		<footer>
+		<footer class="py-5 bg-dark" style="margin-top: 2%;">
 			<div class="container">
 				<p class="m-0 text-center text-white">Copyright &copy; Seleksi Karyawan 2018</p>
 			</div>

@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * user
+ * User
  */
 class User_model extends CI_Model
 {

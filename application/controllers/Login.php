@@ -47,7 +47,7 @@ class Login extends CI_Controller
 			}
 			else {
 				$url = base_url();
-				echo $this->session->set_flashdata('msg', 'Email atau Password salah!');
+				$this->session->set_flashdata('msg', 'Email atau Password salah!');
 				redirect($url);
 			}
 		}

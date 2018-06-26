@@ -1,4 +1,4 @@
-<p><?php echo anchor('admin/add', 'Tambah Admin', 'class="btn btn-outline-success"'); ?></p>
+<p><a class="btn btn-outline-success" href="<?php echo site_url('admin/add') ?>"><i class="fa fa-plus" aria-hidden="true"></i> Tambah Admin</a></p>
 
 <table class="table table-hover">
 	<caption>List of users</caption>
@@ -18,8 +18,9 @@
 			<td><?php echo $i->nm_admin ?></td>
 			<td><?php echo $i->email ?></td>
 			<td>
-				<?php echo anchor('admin/edit/'.$i->id_admin, 'Edit', 'class="btn btn-outline-info btn-sm"'); ?>
-				<?php echo anchor('admin/delete/'.$i->id_admin, 'Delete', 'class="btn btn-outline-danger btn-sm"'); ?>
+				
+				<a class="btn btn-outline-info btn-sm" href="<?php echo site_url('admin/edit/').$i->id_admin ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+				<a class="btn btn-outline-danger btn-sm" href="<?php echo site_url('admin/delete/').$i->id_admin ?>"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
 			</td>
 		</tr>
 		<?php endforeach ?>
