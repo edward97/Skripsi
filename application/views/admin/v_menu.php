@@ -18,6 +18,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<!--===============================================================================================-->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/admin_page.css') ?>">
 		<!--===============================================================================================-->
+
+		<script type="text/javascript">
+			function confirmDialog() {
+				return confirm('Are you sure want to delete this record?')
+			}
+		</script>
 	</head>
 	<body>
 		<div class="wrapper">
@@ -43,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</li> -->
 
 					<li><a href="#"><i class="fa fa-tachometer" aria-hidden="true"></i> Open Session</a></li>
-					<li><a href="<?php echo site_url('admin') ?>"><i class="fa fa-user-plus" aria-hidden="true"></i> Admin</a></li>
+					<li><a href="<?php echo site_url('admin') ?>"><i class="fa fa-user-plus" aria-hidden="true"></i> Manage Admin</a></li>
 					<li><a href="<?php echo site_url('user') ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Profile User</a></li>
 					<li><a href="#"><i class="fa fa-reply-all" aria-hidden="true"></i> Input Nilai Interview</a></li>
 					<li><a href="#"><i class="fa fa-clipboard" aria-hidden="true"></i> Soal Ujian</a></li>
@@ -62,7 +68,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<nav class="navbar navbar-expand-lg navbar-light bg-light">
 					<div class="nav navbar-nav">
 						<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-							<i class="fa fa-bars" aria-hidden="true"></i>
+							<i class="fa fa-bars" aria-hidden="true"></i> <?php echo $judul ?>
 						</button>
 					</div>
 

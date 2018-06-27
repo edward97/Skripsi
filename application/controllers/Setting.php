@@ -42,7 +42,7 @@ class Setting extends CI_Controller
 		);
 
 		$this->setting_model->add_ability('ability', $data);
-		$this->session->set_flashdata('msg_ability', 'Data berhasil ditambah!');
+		$this->session->set_flashdata('msg_ability', '<p class="card-text"><small class="text-success">Data berhasil ditambah!</small></p>');
 		redirect('setting');
 	}
 
@@ -55,15 +55,49 @@ class Setting extends CI_Controller
 		);
 
 		$this->setting_model->add_job('job', $data);
-		$this->session->set_flashdata('msg_job', 'Data berhasil ditambah!');
+		$this->session->set_flashdata('msg_job', '<p class="card-text"><small class="text-success">Data berhasil ditambah!</small></p>');
 		redirect('setting');
+	}
+
+	function update_act_abt() {
+		$id = $this->input->post('id');
+		$nama = $this->input->post('nm_abt');
+
+		$data = array(
+			'nm_ability' => $nama
+		);
+
+		$where = array(
+			'id_ability' => $id
+		);
+
+		$this->setting_model->update_ability('ability', $where, $data);
+		$this->session->set_flashdata('msg_ability', '<p class="card-text"><small class="text-success">Data berhasil diupdate!</small></p>');
+		redirect('Setting');
+	}
+
+	function update_act_job() {
+		$id = $this->input->post('id');
+		$nama = $this->input->post('nm_job');
+
+		$data = array(
+			'nm_job' => $nama
+		);
+
+		$where = array(
+			'id_job' => $id
+		);
+
+		$this->setting_model->update_job('job', $where, $data);
+		$this->session->set_flashdata('msg_job', '<p class="card-text"><small class="text-success">Data berhasil diupdate!</small></p>');
+		redirect('Setting');
 	}
 
 	function delete_act_abt($id) {
 		$where = array('id_ability' => $id);
 		$this->setting_model->delete_ability('ability', $where);
 
-		$this->session->set_flashdata('msg_ability', 'Data berhasil dihapus!');
+		$this->session->set_flashdata('msg_ability', '<p class="card-text"><small class="text-success">Data berhasil dihapus!</small></p>');
 		redirect('setting');
 	}
 
@@ -71,7 +105,7 @@ class Setting extends CI_Controller
 		$where = array('id_job' => $id);
 		$this->setting_model->delete_job('job', $where);
 
-		$this->session->set_flashdata('msg_job', 'Data berhasil dihapus!');
+		$this->session->set_flashdata('msg_job', '<p class="card-text"><small class="text-success">Data berhasil dihapus!</small></p>');
 		redirect('setting');
 	}
 }

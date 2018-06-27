@@ -39,13 +39,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="login100-more" style="background-image: url('<?php echo base_url("assets/images/bg-01.jpg") ?>');"></div>
 
 				<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+					<?php echo $this->session->flashdata('msg_register'); ?>
+
 					<!-- <form class="login100-form validate-form"> -->
 					<?php echo form_open('login/auth', 'class="login100-form validate-form"'); ?>
 						<span class="login100-form-title p-b-59">
 							Sign In
 						</span>
 
-						<?php echo $this->session->flashdata('msg'); ?>
+						<?php echo $this->session->flashdata('msg_login'); ?>
 
 						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 							<span class="label-input100">Email</span>

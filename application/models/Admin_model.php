@@ -6,8 +6,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class Admin_model extends CI_Model
 {
-	function tampil_admin() {
-		return $this->db->get('admins');
+	function tampil_ability($table, $number, $offset) {
+		return $this->db->get($table, $number, $offset);
+	}
+
+	function jumlah_admin() {
+		return $this->db->get('admins')->num_rows();
 	}
 
 	function add_admin($table, $data) {

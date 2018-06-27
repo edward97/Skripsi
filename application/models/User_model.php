@@ -19,4 +19,8 @@ class User_model extends CI_Model
 	function add_user_detail($table, $data) {
 		$this->db->insert($table, $data);
 	}
+
+	function add_user_ability($table, $data) {
+		$this->db->insert_batch($table, $data);
+	}
 }

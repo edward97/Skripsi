@@ -47,7 +47,11 @@ class Login extends CI_Controller
 			}
 			else {
 				$url = base_url();
-				$this->session->set_flashdata('msg', 'Email atau Password salah!');
+				$this->session->set_flashdata(
+					'msg_login', 
+					'<div class="container alert alert-danger" role="alert">
+						Email or Password is Incorrect!
+					</div>');
 				redirect($url);
 			}
 		}

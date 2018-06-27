@@ -185,7 +185,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 					<div class="form-row">
 						<div class="form-group col-md-6">
-							<label for="job_required">Dibutuhkan</label>
+							<label for="job_required">Dibutuhkan Posisi</label>
 							<select name="job_required" id="job_required" class="form-control">
 								<option selected>Choose...</option>
 								<option value="1">IT</option>
@@ -198,10 +198,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="form-group col-md-6">
 							<label for="kemampuan">Kemampuan</label>
 						<select name="kemampuan[]" id="kemampuan" class="selectpicker form-control" multiple data-max-options="2">
-							<option value="Koding">Koding</option>
-							<option value="B Inggris">B Inggris</option>
-							<option value="B Indonesia">B Indonesia</option>
-							<option value="B Jepang">B Jepang</option>
+							<option value="1">Koding</option>
+							<option value="2">B Inggris</option>
+							<option value="3">B Indonesia</option>
+							<option value="4">B Jepang</option>
 						</select>
 						</div>
 					</div>

@@ -36,8 +36,10 @@ class Register extends CI_Controller
 		$status = $this->input->post('status');
 		$pendidikan = $this->input->post('pendidikan');
 		$pengalaman = $this->input->post('pengalaman');
-		
-		$target['tar'] = $this->input->post('kemampuan');
+		$job_required = $this->input->post('job_required');
+
+		// $target['tar'] = $this->input->post('kemampuan');
+		// print_r($target);
 
 		$data_user = array(
 			'id_user' => null,
@@ -47,6 +49,7 @@ class Register extends CI_Controller
 			'id_job' => 99,
 			'id_stage' => 99
 		);
+		// insert data user dan ambil last_id
 		$idInsert = $this->user_model->add_user('users', $data_user);
 
 		$detail_user = array(
@@ -71,7 +74,24 @@ class Register extends CI_Controller
 			'hubungan_kerabat' => $hubungan_kerabat,
 			'id_user' => $idInsert
 		);
+
+		// array 2D
+		$val = array();
+		foreach ($target['tar'] as $i) {
+			array_push($val, array(
+				'id' =>  null,
+				'id_ability' => $i,
+				'id_user' => $idInsert
+			));
+		}
+
 		$this->user_model->add_user_detail('users_detail', $detail_user);
+		$this->user_model->add_user_ability('users_ability', $val);
+		$this->session->set_flashdata(
+			'msg_register', 
+			'<div class="alert alert-success" role="alert">
+				<strong>Register berhasil!</strong> Silahkan konfirmasi email anda terlebih dahulu.
+			</div>');
 
 		redirect('login');
 	}

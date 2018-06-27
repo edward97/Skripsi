@@ -29,8 +29,9 @@
 							<td><?php echo $i->id_ability; ?></td>
 							<td><?php echo $i->nm_ability; ?></td>
 							<td>
-								<?php echo anchor('setting/edit_abt/'.$i->id_ability, 'Edit', 'class="btn btn-outline-info btn-sm"'); ?>
-								<?php echo anchor('setting/delete_act_abt/'.$i->id_ability, 'Delete', 'class="btn btn-outline-danger btn-sm"'); ?>
+								<a href="javascript:;" data-id="<?php echo $i->id_ability ?>" data-nama="<?php echo $i->nm_ability ?>" data-toggle="modal" data-target="#edit-ability" class="btn btn-outline-info btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+
+								<?php echo anchor('setting/delete_act_abt/'.$i->id_ability, '<i class="fa fa-trash-o" aria-hidden="true"></i> Delete', array('class'=>'btn btn-outline-danger btn-sm', 'onclick'=>'return confirmDialog();')); ?>
 							</td>
 						</tr>
 					<?php endforeach ?>
@@ -39,7 +40,13 @@
 		</div>
 
 		<div class="card-footer">
-			<p class="card-text"><small class="text-success"><?php echo $this->session->flashdata('msg_ability'); ?></small></p>
+			<div class="float-left">
+				<?php echo $this->session->flashdata('msg_ability'); ?>
+			</div>
+
+			<div class="float-right">
+				<?php // echo $pagination_ability; ?>
+			</div>
 		</div>
 	</div>
 
@@ -73,8 +80,9 @@
 							<td><?php echo $i->id_job; ?></td>
 							<td><?php echo $i->nm_job; ?></td>
 							<td>
-								<?php echo anchor('setting/edit_job/'.$i->id_job, 'Edit', 'class="btn btn-outline-info btn-sm"'); ?>
-								<?php echo anchor('setting/delete_act_job/'.$i->id_job, 'Delete', 'class="btn btn-outline-danger btn-sm"'); ?>
+								<a href="javascript:;" data-id="<?php echo $i->id_job ?>" data-nama="<?php echo $i->nm_job ?>" data-toggle="modal" data-target="#edit-job" class="btn btn-outline-info btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+
+								<?php echo anchor('setting/delete_act_job/'.$i->id_job, '<i class="fa fa-trash-o" aria-hidden="true"></i> Delete', array('class'=>'btn btn-outline-danger btn-sm', 'onclick'=>'return confirmDialog();')); ?>
 							</td>
 						</tr>
 					<?php endforeach ?>
@@ -83,7 +91,12 @@
 		</div>
 
 		<div class="card-footer">
-			<p class="card-text"><small class="text-success"><?php echo $this->session->flashdata('msg_job'); ?></small></p>
+			<div class="float-left">
+				<?php echo $this->session->flashdata('msg_job'); ?>
+			</div>
+
+			<div class="float-right">
+			</div>
 		</div>
 	</div>
 
@@ -116,10 +129,45 @@
 				</div>
 
 				<div class="modal-footer">
-					<button type="submit" name="submit" class="btn btn-info btn-sm">Save</button>
-					<button type="button" class="btn btn-warning btn-sm" data-dismiss="modal">Cancel</button>
+					<button type="submit" name="submit" class="btn btn-info btn-sm"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
+					<button type="button" class="btn btn-warning btn-sm" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
 				</div>
-			</form>
+			<?php echo form_close(); ?>
+		</div>
+	</div>
+</div>
+
+<!-- Modal Update Ability -->
+<div class="modal fade" id="edit-ability" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Edit Ability</h5>
+				
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<?php echo form_open('setting/update_act_abt') ?>
+			<form>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="id">ID</label>
+						<input type="text" name="id" id="id" class="form-control" readonly>
+					</div>
+
+					<div class="form-group">
+						<label for="nm_abt">Nama Ability</label>
+						<input type="text" name="nm_abt" id="nm_abt" class="form-control" placeholder="Coding, Etc">
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button type="submit" name="submit" class="btn btn-info btn-sm"><i class="fa fa-refresh" aria-hidden="true"></i> Update</button>
+					<button type="button" class="btn btn-warning btn-sm" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
+				</div>
+			<?php echo form_close(); ?>
 		</div>
 	</div>
 </div>
@@ -151,10 +199,45 @@
 				</div>
 
 				<div class="modal-footer">
-					<button type="submit" name="submit" class="btn btn-info btn-sm">Save</button>
-					<button type="button" class="btn btn-warning btn-sm" data-dismiss="modal">Cancel</button>
+					<button type="submit" name="submit" class="btn btn-info btn-sm"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
+					<button type="button" class="btn btn-warning btn-sm" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
 				</div>
-			</form>
+			<?php echo form_close(); ?>
+		</div>
+	</div>
+</div>
+
+<!-- Modal Update Job -->
+<div class="modal fade" id="edit-job" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Edit Job</h5>
+				
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<?php echo form_open('setting/update_act_job') ?>
+			<form>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="id">ID</label>
+						<input type="text" name="id" id="id" class="form-control" readonly>
+					</div>
+
+					<div class="form-group">
+						<label for="nm_job">Nama Job</label>
+						<input type="text" name="nm_job" id="nm_job" class="form-control" placeholder="IT Support, Etc">
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button type="submit" name="submit" class="btn btn-info btn-sm"><i class="fa fa-refresh" aria-hidden="true"></i> Update</button>
+					<button type="button" class="btn btn-warning btn-sm" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
+				</div>
+			<?php echo form_close(); ?>
 		</div>
 	</div>
 </div>

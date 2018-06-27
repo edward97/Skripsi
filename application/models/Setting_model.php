@@ -22,6 +22,16 @@ class Setting_model extends CI_Model
 		$this->db->insert($table, $data);
 	}
 
+	function update_ability($table, $where, $data) {
+		$this->db->where($where);
+		$this->db->update($table, $data);
+	}
+
+	function update_job($table, $where, $data) {
+		$this->db->where($where);
+		$this->db->update($table, $data);
+	}
+
 	function delete_ability($table, $where) {
 		$this->db->where($where);
 		$this->db->delete($table);
