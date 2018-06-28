@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<!--===============================================================================================-->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css') ?>">
 		<!--===============================================================================================-->
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/admin_page.css') ?>">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style4.css') ?>">
 		<!--===============================================================================================-->
 
 		<script type="text/javascript">
@@ -35,24 +35,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 
 				<ul class="list-unstyled components">
-					<!-- <li class="active">
-						<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
-							<i class="glyphicon glyphicon-home"></i>
-							Home
-						</a>
-
-						<ul class="collapse list-unstyled" id="homeSubmenu">
-							<li><a href="#">Home 1</a></li>
-							<li><a href="#">Home 2</a></li>
-							<li><a href="#">Home 3</a></li>
-						</ul>
-					</li> -->
-
 					<li><a href="#"><i class="fa fa-tachometer" aria-hidden="true"></i> Open Session</a></li>
 					<li><a href="<?php echo site_url('admin') ?>"><i class="fa fa-user-plus" aria-hidden="true"></i> Manage Admin</a></li>
 					<li><a href="<?php echo site_url('user') ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Profile User</a></li>
 					<li><a href="#"><i class="fa fa-reply-all" aria-hidden="true"></i> Input Nilai Interview</a></li>
-					<li><a href="#"><i class="fa fa-clipboard" aria-hidden="true"></i> Soal Ujian</a></li>
+
+					<li>
+						<a href="#soalMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+							<i class="fa fa-clipboard" aria-hidden="true"></i> Soal Ujian
+						</a>
+
+						<ul class="collapse list-unstyled" id="soalMenu">
+							<li><a href="<?php echo site_url('soal/input') ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Input Soal Ujian</a></li>
+							<li><a href="<?php echo site_url('soal/list') ?>"><i class="fa fa-list" aria-hidden="true"></i> List Soal Ujian</a></li>
+						</ul>
+					</li>
+
 					<li><a href="#"><i class="fa fa-files-o" aria-hidden="true"></i> Kualifikasi</a></li>
 					<li><a href="<?php echo site_url('setting') ?>"><i class="fa fa-handshake-o" aria-hidden="true"></i> Abilites & Jobs</a></li>
 					<li><a href="#"><i class="fa fa-file-o" aria-hidden="true"></i> Laporan Session</a></li>
