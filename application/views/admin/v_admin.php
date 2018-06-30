@@ -138,7 +138,6 @@
 			</div>
 
 			<?php echo form_open('admin/update_act'); ?>
-			<form>
 				<div class="modal-body">
 					<div class="form-row">
 						<div class="form-group col-md-6">
